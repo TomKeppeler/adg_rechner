@@ -3,19 +3,19 @@ package alg;
 /**
  * @author Marek
  */
-public class QuickSort {
+public class QuickSort<T extends Comparable> {
     String ret = "";
-    private void swap(Integer[] a, int first, int second) {
-        int temp = a[first];
+    private void swap(T[] a, int first, int second) {
+        T temp = a[first];
         a[first] = a[second];
         a[second] = temp;
     }
 
-    private int pivot(Integer[] a, int li, int re) {
+    private int pivot(T[] a, int li, int re) {
         return(li + re) / 2;			//oder alternative Wahl
     }
 
-    private String printinmain(Integer[] arr){
+    private String printinmain(T[] arr){
         String ret = "{";
         for (int i = 0; i < arr.length; i++) {
             if(i != arr.length-1) {
@@ -27,7 +27,7 @@ public class QuickSort {
         return ret;
     }
 
-    public String sortQuick(Integer[] a) {
+    public String sortQuick(T[] a) {
         String firstrow = printinmain(a);
          sortQuick(a, 0, a.length-1);
          return  "import java.util.*;\n" +
@@ -39,7 +39,7 @@ public class QuickSort {
                  "\n" +
                  "}";
     }
-    private void sortQuick(Integer[] a, int li, int re) {
+    private void sortQuick(T[] a, int li, int re) {
 
         if(li >= re) {						//max.einElement?
             return;							//dannfertig
@@ -50,10 +50,10 @@ public class QuickSort {
         int il = li;						//"Linksaussen"
         int ir = re-1;						//"Rechtsaussen"
         do{									//laufeaufeinanderzu
-            while(il <= ir && a[il] < a[re]) {		//linkerWerto.k.
+            while(il <= ir && a[il].compareTo(a[re]) < 0) {		//linkerWerto.k.
                 ++il;						//laufenach"innen"
             }
-            while(il < ir && a[ir] >= a[re]) {		//rechterWerto.k.
+            while(il < ir && a[ir].compareTo(a[re]) >= 0) {		//rechterWerto.k.
                 --ir;						//laufenach"innen"
             }
             if(il < ir) {					//Fehlstandentdeckt?

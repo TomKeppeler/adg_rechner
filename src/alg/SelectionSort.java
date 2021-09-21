@@ -5,10 +5,10 @@ import java.util.ArrayList;
 /**
  * @author https://www.geeksforgeeks.org/selection-sort/ und Tom Keppeler
  */
-public class SelectionSort
+public class SelectionSort<T extends Comparable>
 {
    // private String ret = "";
-    private String sort(Integer arr[])
+    private String sort(T arr[])
     {
         String ret="";
         int n = arr.length;
@@ -18,11 +18,11 @@ public class SelectionSort
             // Find the minimum element in unsorted array
             int min_idx = i;
             for (int j = i+1; j < n; j++)
-                if (arr[j] < arr[min_idx])
+                if (arr[j].compareTo(arr[min_idx]) < 0)
                     min_idx = j;
             // Swap the found minimum element with the first
             // element
-            int temp = arr[min_idx];
+            T temp = arr[min_idx];
             arr[min_idx] = arr[i];
             arr[i] = temp;
             
@@ -35,7 +35,7 @@ public class SelectionSort
         return ret;
     }
  
-    private String printArray(Integer arr[], boolean last, String ret)
+    private String printArray(T arr[], boolean last, String ret)
     {
         int n = arr.length;
         ret +=  "{";
@@ -56,7 +56,7 @@ public class SelectionSort
         }
         return ret + "\n";
     }
-    public String printinmain(Integer[] arr){
+    public String printinmain(T[] arr){
         String ret = "{";
         for (int i = 0; i < arr.length; i++) {
             if(i != arr.length-1) { 
@@ -68,7 +68,7 @@ public class SelectionSort
         return ret;
     }
     // Driver code to test above
-    public String call(Integer[] arr)
+    public String call(T[] arr)
     {
         return "import java.util.*;\n" +
                 "public class Delivery {\n" +

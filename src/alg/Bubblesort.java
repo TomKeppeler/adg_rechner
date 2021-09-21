@@ -1,8 +1,8 @@
 package alg;
 
-public class Bubblesort {
+public class Bubblesort<T extends Comparable>{
 
-    public String sortBubble(Integer[] a) {
+    public String sortBubble(T[] a) {
         String anfangsarray = printinmain(a);
         String out ="";
         int p = a.length-1; // Position letzter Tausch
@@ -10,7 +10,7 @@ public class Bubblesort {
             int re = p; // rechte Grenze fuer Iteration
             p = 0; // bisher keine Vertauschung
             for (int i = 0; i < re; ++i) {
-                if (a[i] > a[i+1]) { // falls Tausch notwendig:
+                if (a[i].compareTo(a[i+1]) > 0) { // falls Tausch notwendig:
                     swap(a, i); // tausche und
                     p = i; // merke Position
                 }
@@ -27,7 +27,7 @@ public class Bubblesort {
                 "}";
     }
 
-    private String printinmain(Integer[] arr){
+    private String printinmain(T[] arr){
         String ret = "{";
         for (int i = 0; i < arr.length; i++) {
             if(i != arr.length-1) {
@@ -39,7 +39,7 @@ public class Bubblesort {
         return ret;
     }
 
-    private static String toString(Integer[] array) {
+    private String toString(T[] array) {
         String out = "{";
         for(int i = 0; i < array.length-1; i++) {
             out += array[i] + ",";
@@ -48,8 +48,8 @@ public class Bubblesort {
         return out;
     }
 
-    private static void swap(Integer[] a, int first) {
-        int temp = a[first];
+    private void swap(T[] a, int first) {
+        T temp = a[first];
         a[first] = a[first+1];
         a[first+1] = temp;
     }
