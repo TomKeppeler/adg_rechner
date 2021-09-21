@@ -74,7 +74,7 @@ public class ActivityMain {
         mergeSortButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                
             }
         });
     }
