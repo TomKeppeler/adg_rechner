@@ -79,8 +79,9 @@ public class Heapsort {
     }
 
     // main function to do heap sort
-    private String minHeapSort(Integer arr[], int n)
+    private String minHeapSort(Integer arr[])
     {
+        int n = arr.length;
         String minHeapSort = "";
         // Build heap (rearrange array)
         for (int i = n / 2 - 1; i >= 0; i--)
@@ -96,7 +97,7 @@ public class Heapsort {
 
             // call max heapify on the reduced heap
             minHeapify(arr, i, 0);
-            if (i != 1) {
+            if (i != 0) {
                 minHeapSort += printArray(arr, true);
             } else {
                 minHeapSort += printArray(arr, false);
@@ -144,6 +145,7 @@ public class Heapsort {
         return ret;
     }
     public String call(Integer[] arr){
-        return maxSort(arr) + minHeapSort(arr, arr.length);
+        return "import java.util.*;\n" +
+                "public class Delivery {\n\n" + maxSort(arr) + minHeapSort(arr) + "\n}";
     }
 }

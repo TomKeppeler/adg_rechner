@@ -27,7 +27,7 @@ public class ActivityMain {
                 String[] temp = uebergabe.split(",");
                 Integer[] l = new Integer[temp.length];
                 for (int i = 0; i < temp.length; i++) {
-                    l[i] = Integer.parseInt(temp[i]);
+                    l[i] = Integer.parseInt(temp[i].trim());
                 }
                 textArea1.setText(new SelectionSort().call(l));
             }
@@ -38,7 +38,7 @@ public class ActivityMain {
                 String[] temp = textField1.getText().trim().split(",");
                 Integer[] l = new Integer[temp.length];
                 for (int i = 0; i < temp.length; i++) {
-                    l[i] = Integer.parseInt(temp[i]);
+                    l[i] = Integer.parseInt(temp[i].trim());
                 }
                 textArea1.setText(new InsertSort().call(l));
             }
@@ -50,7 +50,7 @@ public class ActivityMain {
                 String[] temp = textField1.getText().trim().split(",");
                 Integer[] l = new Integer[temp.length];
                 for (int i = 0; i < temp.length; i++) {
-                    l[i] = Integer.parseInt(temp[i]);
+                    l[i] = Integer.parseInt(temp[i].trim());
                 }
                 textArea1.setText(new Bubblesort().sortBubble(l));
             }
@@ -63,7 +63,7 @@ public class ActivityMain {
                 String[] temp = uebergabe.split(",");
                 Integer[] l = new Integer[temp.length];
                 for (int i = 0; i < temp.length; i++) {
-                    l[i] = Integer.parseInt(temp[i]);
+                    l[i] = Integer.parseInt(temp[i].trim());
                 }
                 textArea1.setText(new QuickSort().sortQuick(l));
             }
@@ -76,7 +76,7 @@ public class ActivityMain {
                 String[] temp = uebergabe.split(",");
                 Integer[] l = new Integer[temp.length];
                 for (int i = 0; i < temp.length; i++) {
-                    l[i] = Integer.parseInt(temp[i]);
+                    l[i] = Integer.parseInt(temp[i].trim());
                 }
                 textArea1.setText(new Mergesort().sortMerge(l));
             }
