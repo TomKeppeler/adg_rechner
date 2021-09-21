@@ -1,12 +1,9 @@
-import alg.Bubblesort;
-import alg.InsertSort;
-
-import alg.QuickSort;
-import alg.SelectionSort;
+import alg.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
 
 public class ActivityMain {
     private JButton selectionSortButton;
@@ -74,7 +71,27 @@ public class ActivityMain {
         mergeSortButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                String uebergabe = textField1.getText();
+                uebergabe = uebergabe.trim();
+                String[] temp = uebergabe.split(",");
+                Integer[] l = new Integer[temp.length];
+                for (int i = 0; i < temp.length; i++) {
+                    l[i] = Integer.parseInt(temp[i]);
+                }
+               // textArea1.setText(new Mergsort() (l));
+            }
+        });
+        heapSortButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String uebergabe = textField1.getText();
+                uebergabe = uebergabe.trim();
+                String[] temp = uebergabe.split(",");
+                Integer[] l = new Integer[temp.length];
+                for (int i = 0; i < temp.length; i++) {
+                    l[i] = Integer.parseInt(temp[i].trim());
+                }
+                textArea1.setText(new Heapsort().call(l));
             }
         });
     }
