@@ -78,7 +78,7 @@ public class ActivityMain {
                 for (int i = 0; i < temp.length; i++) {
                     l[i] = Integer.parseInt(temp[i]);
                 }
-               // textArea1.setText(new Mergsort() (l));
+                textArea1.setText(new Mergesort().sortMerge(l));
             }
         });
         heapSortButton.addActionListener(new ActionListener() {
