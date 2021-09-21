@@ -10,7 +10,6 @@ public class Heapsort {
         for (int i = n / 2 - 1; i >= 0; i--)
             maxHeapify(arr, n, i);
         String tmp = printinmain(arr);
-        maxheapret = "public int[] maxHeap =" + tmp.substring(0,tmp.length()-2) + ";\n";
         // One by one extract an element from heap
         for (int i = n - 1; i > 0; i--) {
             // Move current root to end
@@ -26,7 +25,8 @@ public class Heapsort {
                 maxheapret += printArray(arr, false);
             }
         }
-        return "public int[][] ascSort = {\n" + maxheapret + "\n};";
+        return "public int[][] ascSort = {\n" + maxheapret + "\n};"
+                +  "\npublic int[] maxHeap =" + tmp.substring(0,tmp.length()-2) + ";\n";
     }
     private void maxHeapify(Integer arr[], int n, int i)
     {
@@ -86,8 +86,6 @@ public class Heapsort {
         for (int i = n / 2 - 1; i >= 0; i--)
             minHeapify(arr, n, i);
         String tmp = printinmain(arr);
-
-        minHeapSort = "public int[] minHeap =" + tmp.substring(0, tmp.length()-2) + ";\n";
         // One by one extract an element from heap
         for (int i = n - 1; i >= 0; i--) {
 
@@ -104,7 +102,8 @@ public class Heapsort {
                 minHeapSort += printArray(arr, false);
             }
         }
-        return "public int[][] descSort = {\n" + minHeapSort + "\n};";
+        return "public int[][] descSort = {\n" + minHeapSort + "\n};"
+                + "\npublic int[] minHeap =" + tmp.substring(0, tmp.length()-2) + ";\n";
     }
 
     // To heapify a subtree rooted with node i which is
