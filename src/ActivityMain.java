@@ -115,7 +115,7 @@ public class ActivityMain {
         JFrame frame = new JFrame("ADG Rechner");
         frame.setContentPane(new ActivityMain().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 800);
+        frame.setSize(500, 800);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
