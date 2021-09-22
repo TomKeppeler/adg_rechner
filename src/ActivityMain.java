@@ -47,26 +47,45 @@ public class ActivityMain {
             insertionSortButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String[] temp = textField1.getText().trim().split(",");
-                    Integer[] l = new Integer[temp.length];
-                    for (int i = 0; i < temp.length; i++) {
-                        l[i] = Integer.parseInt(temp[i].trim());
+                    if(zahlenRadioButton.isSelected()) {
+                        String[] temp = textField1.getText().trim().split(",");
+                        Integer[] l = new Integer[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = Integer.parseInt(temp[i].trim());
+                        }
+                        String tmp = new InsertSort<Integer>().call(l);
+                        textArea1.setText(tmp);
+                    }else{
+                        String[] temp = textField1.getText().trim().split(",");
+                        String[] l = new String[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] =temp[i].trim();
+                        }
+                        String tmp = new InsertSort<String>().call(l);
+                        textArea1.setText(tmp);
                     }
-                    String tmp = new InsertSort<Integer>().call(l);
-                    textArea1.setText(tmp);
                 }
             });
 
             bubbleSortButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String[] temp = textField1.getText().trim().split(",");
-                    Integer[] l = new Integer[temp.length];
-                    for (int i = 0; i < temp.length; i++) {
-                        l[i] = Integer.parseInt(temp[i].trim());
+                    if(zahlenRadioButton.isSelected()) {
+                        String[] temp = textField1.getText().trim().split(",");
+                        Integer[] l = new Integer[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = Integer.parseInt(temp[i].trim());
+                        }
+                        textArea1.setText(new Bubblesort<Integer>().sortBubble(l));
+                    }else{
+                        String[] temp = textField1.getText().trim().split(",");
+                        String[] l = new String[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = temp[i].trim();
+                        }
+                        textArea1.setText(new Bubblesort<String>().sortBubble(l));
                     }
-                    textArea1.setText(new Bubblesort<Integer>().sortBubble(l));
-                }
+                    }
             });
 
             quickSortButton.addActionListener(new ActionListener() {
