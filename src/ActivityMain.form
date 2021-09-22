@@ -126,7 +126,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Version 1.1"/>
+                  <text value="Version 1.2"/>
                 </properties>
               </component>
             </children>

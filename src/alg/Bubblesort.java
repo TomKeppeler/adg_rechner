@@ -22,9 +22,8 @@ public class Bubblesort<T extends Comparable>{
                 "\n" +
                 "\n" +
                 "public static int[][] steps = \n" +
-                "{\n" + anfangsarray + out + "};\n" +
-                "\n" +
-                "}";
+                "{\n" + anfangsarray + out.substring(0, out.length()-3) + "\n};\n" +
+                "\n" + "}";
     }
 
     private String printinmain(T[] arr){
