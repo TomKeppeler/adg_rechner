@@ -91,36 +91,64 @@ public class ActivityMain {
             quickSortButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String[] temp = textField1.getText().trim().split(",");
-                    Integer[] l = new Integer[temp.length];
-                    for (int i = 0; i < temp.length; i++) {
-                        l[i] = Integer.parseInt(temp[i].trim());
+                    if(zahlenRadioButton.isSelected()) {
+                        String[] temp = textField1.getText().trim().split(",");
+                        Integer[] l = new Integer[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = Integer.parseInt(temp[i].trim());
+                        }
+                        textArea1.setText(new QuickSort<Integer>().sortQuick(l));
+                    }else{
+                        String[] temp = textField1.getText().trim().split(",");
+                        String[] l = new String[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = temp[i].trim();
+                        }
+                        textArea1.setText(new QuickSort<String>().sortQuick(l));
                     }
-                    textArea1.setText(new QuickSort<Integer>().sortQuick(l));
                 }
             });
 
             mergeSortButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String[] temp = textField1.getText().trim().split(",");
-                    Integer[] l = new Integer[temp.length];
-                    for (int i = 0; i < temp.length; i++) {
-                        l[i] = Integer.parseInt(temp[i].trim());
+                    if(zahlenRadioButton.isSelected()){
+                        String[] temp = textField1.getText().trim().split(",");
+                        Integer[] l = new Integer[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = Integer.parseInt(temp[i].trim());
+                        }
+                        textArea1.setText(new Mergesort<Integer>().sortMerge(l));
+                    }else{
+                        String[] temp = textField1.getText().trim().split(",");
+                        String[] l = new String[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = temp[i].trim();
+                        }
+                        textArea1.setText(new Mergesort<String>().sortMerge(l));
                     }
-                    textArea1.setText(new Mergesort<Integer>().sortMerge(l));
                 }
+
             });
 
             heapSortButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String[] temp = textField1.getText().trim().split(",");
-                    Integer[] l = new Integer[temp.length];
-                    for (int i = 0; i < temp.length; i++) {
-                        l[i] = Integer.parseInt(temp[i].trim());
+                    if(zahlenRadioButton.isSelected()){
+                        String[] temp = textField1.getText().trim().split(",");
+                        Integer[] l = new Integer[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = Integer.parseInt(temp[i].trim());
+                        }
+                        textArea1.setText(new Heapsort<Integer>().call(l));
+                    }else{
+                        String[] temp = textField1.getText().trim().split(",");
+                        String[] l = new String[temp.length];
+                        for (int i = 0; i < temp.length; i++) {
+                            l[i] = temp[i].trim();
+                        }
+                        textArea1.setText(new Heapsort<String>().call(l));
                     }
-                    textArea1.setText(new Heapsort<Integer>().call(l));
                 }
             });
     }
