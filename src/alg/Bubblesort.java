@@ -1,6 +1,6 @@
 package alg;
 
-public class Bubblesort<T extends Comparable>{
+public class Bubblesort<T extends Comparable<T>>{
 
     public String sortBubble(T[] a) {
         String anfangsarray = printinmain(a);

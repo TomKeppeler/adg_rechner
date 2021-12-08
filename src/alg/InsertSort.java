@@ -1,12 +1,9 @@
 package alg;
 
-import alg.SelectionSort;
-
-import java.util.Arrays;
 /**
  * @author https://www.geeksforgeeks.org/insertion-sort/ und Tom Keppeler
  */
-public class InsertSort<T extends Comparable>{
+public class InsertSort<T extends Comparable<T>>{
     /*Function to sort array using insertion sort*/
     private String sort(T[] arr)
     {

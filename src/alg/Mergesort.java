@@ -1,6 +1,6 @@
 package alg;
 
-public class Mergesort<T extends Comparable> {
+public class Mergesort<T extends Comparable<T>> {
 
     public String sortMerge(T[] a) {
         String firstrow= toString(a, 0, a.length);

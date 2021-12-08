@@ -3,7 +3,7 @@ package alg;
 /**
  * @author Marek
  */
-public class QuickSort<T extends Comparable> {
+public class QuickSort<T extends Comparable<T>> {
     String ret = "";
     private void swap(T[] a, int first, int second) {
         T temp = a[first];

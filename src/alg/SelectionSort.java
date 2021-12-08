@@ -1,11 +1,9 @@
 package alg;
 
-import java.util.ArrayList;
-
 /**
  * @author https://www.geeksforgeeks.org/selection-sort/ und Tom Keppeler
  */
-public class SelectionSort<T extends Comparable>
+public class SelectionSort<T extends Comparable<T>>
 {
    // private String ret = "";
     private String sort(T arr[])

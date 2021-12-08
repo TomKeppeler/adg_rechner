@@ -1,7 +1,7 @@
 package alg;
 
 // Java program for implementation of Heap Sort
-public class Heapsort<T extends Comparable> {
+public class Heapsort<T extends Comparable<T>> {
     public String maxSort(T arr[])
     {
         int n = arr.length;
